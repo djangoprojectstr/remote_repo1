@@ -33,7 +33,6 @@ urlpatterns = [
     url(r'^profile/', views.wish),
     url(r'^thk/', views.indexview),
     url(r'^mch/', views.matchview),
-    # url(r'^(?P<id>\d+)/share/$', views.fbkview,name='fbk'),
     url(r'^index/', views.index,name='index'),
     url(r'^profile/$', views.view_profile, name='view_profile'),
     url(r'^edit_profile', views.edit_profile, name='edit_profile'),
