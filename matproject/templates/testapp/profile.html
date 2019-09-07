@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<style>
+#borderimg1 {
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(border.png) 30 stretch
+}
+}
+
+</style>
+<div class="jumbotron">
+  <div class="container" style='border: 2px solid red;border-radius: 12px; background: #ffffff url("/static/images/tree.jpg") no-repeat right bottom;
+  margin-right: 100px;'>
+<h2 style=' text-shadow: 0 0 31px green'>  <marquee behavior="scroll" direction="right" scrollamount="5">Hello {{ user.matr.fullname }}</marquee></h2>
+<h2 style=' text-shadow: 0 0 31px red'><marquee behavior="scroll" direction="right" scrollamount="10">Welcome To</marquee></h2>
+<h2 style=' text-shadow: 0 0 31px blue'><marquee behavior="scroll" direction="right" scrollamount="8">Your Profile..</marquee></h2>
+<h2 style=' text-shadow: 2px 2px 5px red;'>Hi  <span style=" color:green;color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 1px darkblue;"> {{ user.matr.fullname }} </span>{{insert_msg}} {{insert_date}}</h2>
+
+<br><br>
+{% if user.matr.photo %}
+    <p id="borderimg1"><img src="{{ user.matr.photo.url }}" alt="/static/images/pn.jpg" width="330"></p>
+    {% endif %}
+    <br><br>
+<div class="hum">
+<h2 style='color:green;color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;'>Profile Information:</h2>
+<h3>Username   : {{ user }}</h3>
+<h3>First Name : {{ user.first_name }}</h3>
+<h3>Last Name : {{ user.last_name }}</h3>
+<h3>Email Id : {{ user.email }}</h3>
+<h3>Full Name : {{ user.matr.fullname }}</h3>
+<h3>Phone Number : {{ user.matr.phone }}</h3>
+<h3>Age : {{ user.matr.age }}</h3>
+<h3>Gender : {{ user.matr.gender }}</h3>
+<h3>Caste : {{ user.matr.caste }}</h3>
+<h3>Date Of Birth : {{ user.matr.date_of_birth }}</h3>
+<h3>Location  : {{ user.matr.location }}</h3>
+<h3>Comment : {{ user.matr.comments }}</h3>
+<br>
+<div class="container" align="center">
+<a href="{% url 'edit_profile' %}" class='btn btn-lg btn-success'>Edit Profile</a>
+</div>
+<br>
+</div>
+</div>
+{%endblock%}

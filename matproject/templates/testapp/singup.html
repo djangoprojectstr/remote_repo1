@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load crispy_forms_tags%}
+{%block body_block%}
+<style>
+body{
+background:url("/static/images/b2.jpg")}
+</style>
+
+
+
+  <div class="container" style="width:700px;">
+<h2>Sign up</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form|crispy}}
+    {{ profile_form|crispy }}
+    <!-- {{form|crispy}} -->
+    <!-- {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %} -->
+    <button type="submit" class='btn btn-lg btn-success'>Sign up</button>
+  </form>
+</div>
+{%endblock%}

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+
+
+
+#main_container {
+    width: 400px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    font-family: sans-serif;
+    border-radius: 20px;
+    border: 3px solid #999;
+}
+
+#birth_date_input, #age_container {
+    text-align: center;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#age_container {
+    margin: 40px 5px;
+    padding: 20px;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-weight: bolder;
+    background: #EEE;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#calculate {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background: #FFD119;
+
+	background: -moz-linear-gradient(top, #FFD119, #E6B800);
+    font-weight: bold;
+    height: 28px;
+    box-shadow: 0 -8px inset;
+}
+
+#calculate:hover {
+
+	  background: -moz-linear-gradient(top, #E6B800, #FFD119);
+    margin-top: 13px;
+    height: 25px;
+    box-shadow: 0 5px inset;
+}
+
+#calculate:active {
+    background: #403300;
+    padding-top: 10px;
+    height: 20px;
+    box-shadow: 0 5px #000 inset;
+}
+
+#age {
+    padding: 5px;
+    border: 3px dashed #AAA;
+    background-color: green;
+}
+html{
+    background:rgb(100, 100, 1000);
+}
+
+
+
+
+
+
+</style>
+
+<div class="df" align='center'>
+<h4>Enter your age:<input id="age"></h4><br></div>
+<button onclick="verify()">Click me</button>
+
+
+
+
+
+    <div id="main_container" style="background:#3492eb;">
+        <div id="birth_date_input">Birth Date*: <input type="date" id="birth_date"></div>
+        <br/>
+        <div id="calculate">Calculate your age**</div>
+
+        <div id="age_container"><span id="exact_age">Age</span></div>
+        <p><em>* The year here is 365 days and the month here is 30 days, that means your birthday may not mean you will be 0 days old.</br>
+        **Don't worry I will not share your input.</em></p>
+        </p>
+    </div>
+
+
+
+
+<h2 style="text-align:center;color:green;"><u>Profiles</u></h2>
+<br><br>
+<div class="row">
+   <div class="column">
+<div class="card" inline>
+  <img src="/static/images/jd.jpg" alt="John" style="width:100%">
+  <h2>John</h2>
+  <p class="title">Age:26</p>
+  <p>Designation:SoftwareEngineer</p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+
+<!-- <div class="row"> -->
+   <div class="column">
+<div class="card">
+  <img src="/static/images/jd6.jpg" alt="John" style="width:67%;">
+  <h2>Laksh</h2>
+  <p class="title">Age:27</p>
+  <p>Designation:Teacher</p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+
+
+
+<!-- <div class="row"> -->
+   <div class="column">
+<div class="card">
+  <img src="/static/images/jd1.jpg" alt="John" style="width:100%">
+  <h2>Ram</h2>
+  <p class="title">Age:30</p>
+  <p>Designation:Manager  </p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+</div>
+
+
+
+<div class="row">
+   <div class="column">
+<div class="card" inline>
+  <img src="/static/images/jd5.jpg" alt="John" style="width:65%">
+  <h1>Isha</h1>
+  <p class="title">Age:24</p>
+  <p>Designation:UI Developer</p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+
+<!-- <div class="row"> -->
+   <div class="column">
+<div class="card">
+  <img src="/static/images/jd2.jpg" alt="John" style="width:110%">
+  <h2>Hemanth</h2>
+  <p class="title">Age:27</p>
+  <p>Designation:Civil Eng </p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+
+
+
+<!-- <div class="row"> -->
+   <div class="column">
+<div class="card">
+  <img src="/static/images/jd4.jpg" alt="John" style="width:65%">
+  <h1>Priyanka</h1>
+  <p class="title">Age:26</p>
+  <p>Designation:Teacher </p>
+  <div style="margin: 24px 0;">
+    <a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+    <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+    <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+  </div>
+  <a href="/fbk"><p><button>Contact</button></p></a>
+</div>
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+    $("#calculate").click(function(){
+        var mdate = $("#birth_date").val().toString();
+        var yearThen = parseInt(mdate.substring(0,4), 10);
+        var monthThen = parseInt(mdate.substring(5,7), 10);
+        var dayThen = parseInt(mdate.substring(8,10), 10);
+
+        var today = new Date();
+        var birthday = new Date(yearThen, monthThen-1, dayThen);
+
+        var differenceInMilisecond = today.valueOf() - birthday.valueOf();
+
+        var year_age = Math.floor(differenceInMilisecond / 31536000000);
+        var day_age = Math.floor((differenceInMilisecond % 31536000000) / 86400000);
+
+        if ((today.getMonth() == birthday.getMonth()) && (today.getDate() == birthday.getDate())) {
+            alert("Happy B'day!!!");
+        }
+
+        var month_age = Math.floor(day_age/30);
+
+        day_age = day_age % 30;
+
+        if (isNaN(year_age) || isNaN(month_age) || isNaN(day_age)) {
+            $("#exact_age").text("Invalid birthday - Please try again!");
+        }
+        else {
+            $("#exact_age").html("You are<br/><span id=\"age\">" + year_age + " years " + month_age + " months " + day_age + " days</span> old");
+        }
+    });
+});
+
+
+</script>
+
+
+
+<script>
+function verify(){
+var no;
+no=Number(document.getElementById("age").value);
+if(no<18)
+{
+alert("Under 18 not eligible");
+}
+else if(no>60)
+{
+alert("Above 60 not eligible");
+}
+else
+{
+alert("You are Eligible we will share details soon");
+}
+}
+</script>
+
+
+
+
+
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 30.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+{%endblock%}

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+
+
+
+
+
+
+
+
+
+
+
+<style>
+div.gallery {
+  border: 2px solid #ccc;
+}
+
+
+div.gallery:hover {
+  border: 2px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 20px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+body{
+  background:url("/static/images/br1.jpg");
+}
+
+
+
+
+
+
+
+
+.container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+  }
+  .carousel-indicators li {
+    border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+    background-color: #f4511e;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+</style>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+  <div class="jumbotron" style='background:url("/static/images/br8.jpg");'>
+
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <div class="main">
+    	<div class = "border">
+    		<div class = "inner-cutout">
+    			<h1 class="knockout">Welcome to <br><br>Arepalli'S Matrimony</h1>
+    		</div>
+    	</div>
+    </div>
+</div><br>
+
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<h2 id='hi'>Saptapadi</h2><br><br>
+	</div>
+
+	<div class="block">
+      <div class="row">
+        <div class="span4">
+          <img class="img-left" src="/static/images/mr.jpg" style="width:400px" height="300px"/>
+          <div class="content-heading"><h3>The Seven Steps: &nbsp</h3></div>
+          <p id="pa">The Seven Steps – What do they represent?<br>
+          This portion of the ceremony takes places following the tying of the Mangalsutra (hyperlink) and establishes the commitmentthe couple makes
+          to each other during the Hindu wedding ceremony.Saptapadi quite literally translates from Sanskrit to ‘seven steps’. Many are familiar with
+          images across the Internet of Indian Brides leading their Grooms around the fire pit at the Mandap, but few know the significance of these steps..
+          The couple takes seven full circles, walking clockwise around the agni, representing the seven principles and promises they make to each other;
+          each step is referred to as a ‘phere’. They are tied together with the dupattas, or chunis, from the Granthi Bandhanam ritual, which is used to
+          keep the couple united as they make their rounds. Although there is no literal part of the ceremony that represents the Western mentality of vow
+          exchanging, these seven steps parallel that ideal in that the couple ‘vows’ to successfully fulfill these principles during their married life.</p>
+        </div>
+     </div>
+     <br/>
+      <div class="row">
+        <div class="span4">
+          <img class="img-right" src="/static/images/mr4.jpg" style="width:400px" height="300px"/>
+          <div class="content-heading"><h3>The Seven Steps: &nbsp </h3></div>
+          <p id="pa">
+          The following is a list of the promises the couple makes as they complete each full circle. While the couple is making their rounds, the priest
+          dictates mantras pertaining to each specific phere. The Groom takes the pinky finger (or hand) of his Bride and leads her for the first four pheras,
+          and then they switch places and the Bride finishes the last three by leading him to the culminating step. Each of these pheras signifies a specific
+          meaning for both the Bride and Groom – complementary meanings that ensure that they will work as a unit to make this marriage successful, healthy, and prosperous.
+          1. Let us provide for our household, stay in good health and carry out our duties and responsibilities to each other, our families and our tradition.</p>
+        </div>
+     </div>
+   </div>
+   <br/>
+    <div class="row">
+      <div class="span4">
+        <img class="img-left" src="/static/images/d1.jpg" style="width:400px" height="300px"/>
+        <div class="content-heading"><h3>The Seven Steps:  &nbsp </h3></div>
+        <p id="pa">1. Let us provide for our household, stay in good health and carry out our duties and responsibilities to each other, our families and our tradition.<br>
+           2. Let us develop our mental and spiritual powers.<br>
+           3. Let us increase our wealth and comfort by righteous and proper means.<br>
+           4. Let us acquire knowledge, happiness and harmony by mutual love, respect and trust.
+           5. Let us be blessed with contended family of strong, virtuous and heroic children.
+           6. Let us be blessed with long lives.<br>
+           7. Let us remain true companions, committed only to each other<br>
+          While the couple makes their rounds, family members that are present on the Mandap bless the couple with rose petals
+          and rice, celebrating a pivotal part of the ceremony. After the Bride and Groom have made the seven rounds, they seek
+          blessing from Lord Vishnu, the preserver, and Lakhsmi, the goddess of wealth. It is said that the couple has tied themselves
+          together for seven lifetimes to come once this part of the ceremony is finished. Some regions of India finish the ceremony off
+          having the bride touch seven beetlenuts in turn with her toe, while her groom helps her keep her balance. There are many regional differences that occur in the execution of this ritual. In South Indian tradition it is customary that the couple take seven steps due south, with the Groom leading his Bride by her pinky finger around the fire.</p>
+      </div>
+   </div>
+  </div>
+</div>
+<br>
+
+
+
+<div class="jumbotron" style='background:url("/static/images/br4.jpg")';>
+<div class="span4">
+  <div class="lee">
+  <h2 style="color:green;">We help at every stage</h2><br><br>
+  <img class="img-right" src="/static/images/d3.jpg" style="width:500px" height="500px" align="middle"/>
+  <!-- <div class="content-heading"><h3>The Seven Steps: &nbsp </h3></div> -->
+  <p id="jb">Pioneered by Matrimony - No. 1 and Most Trusted Matrimony service,<br>
+      Matrimony has helped Lakhs of Telugus like you find matches from across  <br>
+     different communities such as Arya Vysya, Reddy,Kamma, Kapu,Gowdas,<br>
+     Brahmin-Niyogi, Padmasali,Balija,Naidu and Yadav,most trusted matrimony<br>
+     service for Telugu.<br>
+
+  </p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h4>Why Choose TeluguMatrimony<h4><br>
+  <p><li>No.1 & most trusted matrimony service for Telugu</li></p>
+  <p><li>100% verified mobile numbers</li></p>
+  <p><li>Our largest number of profiles increases your chances of meeting right person</li></p>
+  <p><li>Lakhs of Telugus have found their life partner here</li></p>
+  <p><li>Trusted service for more than 19 years</li></p><br><br>
+  <a href="/singup" class='btn btn-lg btn-success'>Registe Free - Get Started</a>
+</div>
+</div>
+<div class="di" style="background:yellow">
+<br>
+  <h2 align="center">Most Trusted Matrimony Brand in India</h2>
+  <p align="center">With 140+ branches across India, Largest Network of its kind</p><br>
+<div style="text-align:center"><a href="/singup" class='btn btn-lg btn-success'>Registe Free - Get Started</a>
+</div>
+<br><br>
+</div>
+</div>
+
+
+
+<h2 align="center" style="color:red;">Lakhs of Telugus have found their life partner here!</h2><br>
+
+  <h2 style="text-align:center; color:blue;">Image Gallery</h2>
+  <br>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="/akl">
+        <img src="/static/images/tm5.jpg" alt="Cinque Terre" width="600" height="400">
+      </a>
+      <div class="desc">Akila and Harideep</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="/siri">
+        <img src="/static/images/tm4.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc">Sirish and Saraswathi</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="/dep">
+        <img src="/static/images/tm2.jpg" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">Deepa and Praveen</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="/sub">
+        <img src="/static/images/tm3.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Rahul and Lakshmi</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br><br>
+
+<h3 align="center">Now it is your turn to be happily married</h2>
+<div style="text-align:center"><a href="/singup" class='btn btn-lg btn-success'>Registe Free - Get Started</a></div>
+<br><br>
+
+
+  <div class="jumbotron">
+    <h2 align="center">Start your search for a perfect match</h2><br>
+    <form>
+    <div class="form-group col-md-4" style="width:12%">
+      <label for="inputState" style="font-size:12px">I'am looking for a </label>
+      <select id="inputState" class="form-control">
+        <option>Women</option>
+        <option>Men</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4" style="width:8%">
+      <label for="inputState" style="font-size:12px">Age</label>
+      <select id="inputState" class="form-control">
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3" style="width:8%">
+      <label for="inputState" style="font-size:12px">To</label>
+      <select id="inputState" class="form-control">
+        <option>40</option>
+        <option>39</option>
+        <option>38</option>
+        <option>37</option>
+        <option>36</option>
+        <option>35</option>
+        <option>34</option>
+        <option>33</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip" style="font-size:12px">Religion</label>
+      <select id="inputState" class="form-control">
+        <option>Religion-Any</option>
+        <option>Hindu</option>
+        <option>Muslim-All</option>
+        <option>Muslim-Shia</option>
+        <option>Muslim-Sunni</option>
+        <option>Muslim-Others</option>
+        <option>Christian</option>
+        <option>Sikh</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Caste</label>
+      <select id="inputState" class="form-control">
+        <option>Any</option>
+        <option>Gowda</option>
+        <option>Naidu</option>
+        <option>Chowdary</option>
+        <option>Rgikula</option>
+        <option>Settibaliga</option>
+        <option>Kapu</option>
+        <option>Caste no bar</option>
+      </select>
+
+    </div>
+  <div class="form-group col-md-2">
+    <label for="inputZip"></label><br>
+    <a href="#" class="btn btn-primary">Let's Begin</a>
+
+  </div>
+</form>
+<br><br><br><br>
+</div>
+<!-- </div> -->
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Company Page</h2>
+      <h4>Lorem ipsum..</h4>
+      <p>Lorem ipsum..</p>
+      <a href="#"><button class="btn btn-default btn-lg">Get in Touch</button></a>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>
+      <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/static/images/marg4.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Yes, we built Paris</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/static/images/marg3.jpg" alt="New York" width="400" height="300">
+        <p><strong>New York</strong></p>
+        <p>We built New York</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/static/images/marg2.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>San Francisco</strong></p>
+        <p>Yes, San Fran is ours</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>What our customers say</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"This matrimony is the best. I am so happy with the result!"<br><span>ManushArepalli,President , Comment Box</span></h4>
+      </div>
+      <div class="item">
+        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="/static/images/marg5.jpg" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="/static/images/mr3.jpg" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- Container (Pricing Section) -->
+<div id="pricing" class="container-fluid">
+  <div class="text-center">
+    <h2>Pricing</h2>
+    <h4>Choose a payment plan that works for you</h4>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Basic</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>20</strong> Lorem</p>
+          <p><strong>15</strong> Ipsum</p>
+          <p><strong>5</strong> Dolor</p>
+          <p><strong>2</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$19</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Pro</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>50</strong> Lorem</p>
+          <p><strong>25</strong> Ipsum</p>
+          <p><strong>10</strong> Dolor</p>
+          <p><strong>5</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$29</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>Premium</h1>
+        </div>
+        <div class="panel-body">
+          <p><strong>100</strong> Lorem</p>
+          <p><strong>50</strong> Ipsum</p>
+          <p><strong>25</strong> Dolor</p>
+          <p><strong>10</strong> Sit</p>
+          <p><strong>Endless</strong> Amet</p>
+        </div>
+        <div class="panel-footer">
+          <h3>$49</h3>
+          <h4>per month</h4>
+          <button class="btn btn-lg">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Andhra, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 9248311693</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> arepallimatry@gmail.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <form method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+          <input class="form-control" id="name" name="message" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="message" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="message" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Image of location/map -->
+<img src="/static/images/map1.jpg" class="img-responsive" style="width:100%">
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <!-- <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p> -->
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== ""){
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+
+{%endblock%}

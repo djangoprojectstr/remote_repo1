@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%load crispy_forms_tags%}
+{%block body_block%}
+<style>
+body{
+background:url("/static/images/b2.jpg")}
+</style>
+<div class="container" style="width:700px;">
+<h1>Edit Profile</h1>
+<form method="post">
+{% csrf_token %}
+{{ form|crispy }}
+{{profile_form|crispy}}
+<button type="submit">Submit</button>
+</div>
+{%endblock%}
