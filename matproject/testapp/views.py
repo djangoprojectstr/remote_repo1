@@ -172,21 +172,3 @@ def index(request):
 
 
 
-# from django.core.mail import send_mail
-# from testapp.forms import EmailSendForm
-
-# def fbkview(request,id):
-#         post=get_object_or_404(Post,id=id,status='published')
-#         sent=False
-#         if request.method=='POST':
-#              form=EmailSendForm(request.POST)
-#              if form.is_valid():
-#                  cd=form.cleaned_data
-#                  subject='{}({}) recommends you to read"{}"'.format(cd['name'],cd['email'],post.title)
-#                  post_url=request.build_absolute_uri(post.get_absolute_url())
-#                  message='Read Post At:\n {}\n\n{}\'s Comments:\n{}'.format(post_url,cd['name'],cd['comments'])
-#                  send_mail(subject,message,'python@blog.com',[cd['to']])
-#                  sent=True
-#         else:
-#             form=EmailSendForm()
-#         return render(request,'testapp/feedback.html',{'form':form,'post':post,'sent':sent})
